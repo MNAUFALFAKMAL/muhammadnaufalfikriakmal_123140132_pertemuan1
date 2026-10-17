@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do Kuliah — Muhammad Naufal Fikri Akmal (123140132)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-emerald-50">
+
+  <div class="max-w-2xl mx-auto p-6">
+
+    <!-- Kop halaman -->
+    <header class="mb-6">
+      <div class="flex items-center justify-between flex-wrap gap-3">
+        <div>
+          <h1 class="text-2xl font-bold text-emerald-900 flex items-center gap-2">
+            <i data-lucide="list-todo" class="w-7 h-7 text-emerald-600"></i> To-Do List Kuliah
+          </h1>
+          <p class="text-sm text-emerald-800/60">Muhammad Naufal Fikri Akmal — 123140132</p>
+        </div>
+        <p id="jam" class="bg-emerald-900 text-emerald-300 font-mono text-sm px-4 py-1 rounded-full">--:--:--</p>
+      </div>
+    </header>
+
+    <!-- Ringkasan progres + tombol hapus semua -->
+    <section class="bg-white border border-emerald-100 rounded-xl p-5 mb-4 shadow-sm">
+      <div class="flex justify-between items-center mb-2">
+        <h2 class="font-semibold text-emerald-900">Progres Tugas</h2>
+        <span id="teksProgres" class="text-xs font-bold text-emerald-600">0%</span>
+      </div>
+      <div class="bar-luar">
+        <div id="barProgres" class="bar-dalam"></div>
+      </div>
+      <div class="flex justify-between items-center mt-3 flex-wrap gap-2">
+        <p id="ringkasan" class="text-xs text-emerald-800/70">0 total · 0 selesai · 0 belum</p>
+        <button type="button" id="tombolHapusSemua" class="btn-hapus-semua">
+          <i data-lucide="trash-2" class="w-3.5 h-3.5"></i> Hapus Semua Tugas
+        </button>
+      </div>
+    </section>
+
+    <!-- Formulir tambah / edit tugas -->
+    <section class="bg-white border border-emerald-100 rounded-xl p-5 mb-4 shadow-sm">
+      <h2 id="judulForm" class="font-semibold text-emerald-900 mb-3 flex items-center gap-2">
+        <i data-lucide="square-pen" class="w-4 h-4 text-emerald-600"></i> Tambah Tugas
+      </h2>
+      <form id="formTugas">
+        <input type="hidden" id="idTugas">
+        <input type="text" id="judulTugas" class="field" placeholder="Contoh: Laporan Praktikum PAW" required>
+        <input type="date" id="tenggatTugas" class="field mt-2">
+        <div class="flex gap-2 mt-3">
+          <button type="submit" class="btn-simpan">
+            <i data-lucide="check" class="w-4 h-4"></i> Simpan
+          </button>
+          <button type="button" id="batalEdit" class="btn-batal hidden">Batal</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Daftar tugas + filter -->
+    <section class="bg-white border border-emerald-100 rounded-xl p-5 mb-6 shadow-sm">
+      <div class="flex justify-between items-center mb-3 flex-wrap gap-2">
+        <h2 class="font-semibold text-emerald-900 flex items-center gap-2">
+          <i data-lucide="list-checks" class="w-4 h-4 text-emerald-600"></i> Daftar Tugas
+        </h2>
+        <span id="jumlahTugas" class="text-xs text-emerald-800/60">0 tugas</span>
+      </div>
+
+      <!-- Filter status tugas -->
+      <div id="filterTugas" class="flex gap-2 mb-3 flex-wrap">
+        <button type="button" class="tombol-filter aktif" data-filter="semua">Semua</button>
+        <button type="button" class="tombol-filter" data-filter="belum">Belum Selesai</button>
+        <button type="button" class="tombol-filter" data-filter="selesai">Selesai</button>
+      </div>
+
+      <div id="daftarTugas"></div>
+    </section>
+
+    <!-- Kutipan harian (async) -->
+    <section class="bg-emerald-900 text-white rounded-xl p-5 mb-6">
+      <div class="flex justify-between items-center">
+        <h2 class="font-semibold text-sm flex items-center gap-2">
+          <i data-lucide="quote" class="w-4 h-4 text-emerald-400"></i> Kutipan Hari Ini
+        </h2>
+        <button id="tombolKutipan" class="text-xs text-emerald-300 hover:text-white underline">Muat ulang</button>
+      </div>
+      <p id="teksKutipan" class="mt-3 italic text-sm">Memuat kutipan...</p>
+      <p id="penulisKutipan" class="text-right text-xs text-emerald-400 mt-2"></p>
+    </section>
+
+    <footer class="text-center text-xs text-emerald-800/50">
+      Maleee Replika 132
+    </footer>
+
+  </div>
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script type="module" src="js/main.js"></script>
+
+</body>
+</html>

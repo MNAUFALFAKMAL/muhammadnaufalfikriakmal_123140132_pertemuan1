@@ -1,0 +1,176 @@
+/* css/style.css — gaya tambahan bertema hijau (sebagian besar pakai Tailwind) */
+
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+/* ===== Formulir ===== */
+.field {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid #a7d7c5;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  background: #f8fffc;
+}
+
+.field:focus {
+  outline: 2px solid #059669;
+  border-color: transparent;
+}
+
+.btn-simpan,
+.btn-batal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-simpan {
+  background: #059669;
+  color: #fff;
+}
+
+.btn-simpan:hover {
+  background: #047857;
+}
+
+.btn-batal {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+/* ===== Progres tugas ===== */
+.bar-luar {
+  width: 100%;
+  height: 0.7rem;
+  background: #d1fae5;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.bar-dalam {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #10b981, #059669);
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.btn-hapus-semua {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1px solid #fecaca;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-size: 0.72rem;
+  font-weight: 700;
+  border-radius: 0.45rem;
+  padding: 0.3rem 0.65rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-hapus-semua:hover {
+  background: #fee2e2;
+}
+
+/* ===== Filter tugas ===== */
+.tombol-filter {
+  border: 1px solid #a7d7c5;
+  background: #fff;
+  color: #065f46;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.25rem 0.8rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.tombol-filter:hover {
+  background: #ecfdf5;
+}
+
+.tombol-filter.aktif {
+  background: #059669;
+  border-color: #059669;
+  color: #fff;
+}
+
+/* ===== Baris tugas ===== */
+.baris-tugas {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #ecfdf5;
+}
+
+.baris-tugas .judul-tugas {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.baris-tugas.selesai .judul-tugas {
+  text-decoration: line-through;
+  color: #94a3b8;
+}
+
+.tag-status {
+  font-size: 0.65rem;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 0.05rem 0.5rem;
+  white-space: nowrap;
+}
+
+.tag-status.belum {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.tag-status.selesai {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.centang {
+  width: 1rem;
+  height: 1rem;
+  accent-color: #059669;
+  cursor: pointer;
+}
+
+.tombol-ikon {
+  border: none;
+  background: transparent;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 0.4rem;
+  display: inline-flex;
+}
+
+.tombol-ikon:hover {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.tombol-ikon.bahaya:hover {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.daftar-kosong {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #6ee7b7;
+  padding: 1.4rem 0;
+}
